@@ -62,9 +62,9 @@ def go_to_load_state(env, loading_state_for_func, discount_factor=1.0, alpha=0.6
             else:
                 current_state[1] += 1
                 if current_state == loading_state_for_func:
-
+                    grid_world[(current_state[0],current_state[1])] = grid_world[(current_state[0],current_state[1])] + epsilon*(1000 + (discount_factor*0))
                 else:
-
+                    pass
 
 
         elif res == "left":
@@ -73,9 +73,10 @@ def go_to_load_state(env, loading_state_for_func, discount_factor=1.0, alpha=0.6
             else:
                 current_state[1] -= 1
                 if current_state == loading_state_for_func:
-
+                    grid_world[(current_state[0], current_state[1])] = grid_world[(
+                    current_state[0], current_state[1])] + epsilon * (1000 + (discount_factor * 0))
                 else:
-
+                    pass
 
 
         elif res == "up":
@@ -84,9 +85,10 @@ def go_to_load_state(env, loading_state_for_func, discount_factor=1.0, alpha=0.6
             else:
                 current_state[0] -= 1
                 if current_state == loading_state_for_func:
-
+                    grid_world[(current_state[0], current_state[1])] = grid_world[(
+                    current_state[0], current_state[1])] + epsilon * (1000 + (discount_factor * 0))
                 else:
-
+                    pass
 
 
         else:
@@ -95,9 +97,10 @@ def go_to_load_state(env, loading_state_for_func, discount_factor=1.0, alpha=0.6
             else:
                 current_state[0] += 1
                 if current_state == loading_state_for_func:
-
+                    grid_world[(current_state[0], current_state[1])] = grid_world[(
+                    current_state[0], current_state[1])] + epsilon * (1000 + (discount_factor * 0))
                 else:
-
+                    pass
 
 
 
@@ -111,9 +114,11 @@ def go_to_unload_state(env, unload_state_for_func, discount_factor=1.0, alpha=0.
             else:
                 current_state[1] += 1
                 if current_state == unload_state_for_func:
-
+                    grid_world[(current_state[0], current_state[1])] = grid_world[(
+                    current_state[0], current_state[1])] + epsilon * (1000 + (discount_factor * 0))
                 else:
-
+                    grid_world[(current_state[0], current_state[1])] = grid_world[(
+                    current_state[0], current_state[1])] + epsilon * (1000 + (discount_factor * 0))
 
 
         elif res == "left":
@@ -122,9 +127,11 @@ def go_to_unload_state(env, unload_state_for_func, discount_factor=1.0, alpha=0.
             else:
                 current_state[1] -= 1
                 if current_state == unload_state_for_func:
-
+                    grid_world[(current_state[0], current_state[1])] = grid_world[(
+                    current_state[0], current_state[1])] + epsilon * (1000 + (discount_factor * 0))
                 else:
-
+                    grid_world[(current_state[0], current_state[1])] = grid_world[(
+                    current_state[0], current_state[1])] + epsilon * (1000 + (discount_factor * 0))
 
 
         elif res == "up":
@@ -133,9 +140,11 @@ def go_to_unload_state(env, unload_state_for_func, discount_factor=1.0, alpha=0.
             else:
                 current_state[0] -= 1
                 if current_state == unload_state_for_func:
-
+                    grid_world[(current_state[0], current_state[1])] = grid_world[(
+                    current_state[0], current_state[1])] + epsilon * (1000 + (discount_factor * 0))
                 else:
-
+                    grid_world[(current_state[0], current_state[1])] = grid_world[(
+                    current_state[0], current_state[1])] + epsilon * (1000 + (discount_factor * 0))
 
 
         else:
@@ -143,10 +152,11 @@ def go_to_unload_state(env, unload_state_for_func, discount_factor=1.0, alpha=0.
                 print('Bigger then 10. down')
             else:
                 current_state[0] += 1
-                if current_state == loading_state_for_func:
-
+                if current_state == unload_state_for_func:
+                    grid_world[(current_state[0], current_state[1])] = grid_world[(
+                    current_state[0], current_state[1])] + epsilon * (1000 + (discount_factor * 0))
                 else:
-
+                    pass
 
 def go_back_to_starting_state(env, starting_state_for_func, discount_factor=1.0, alpha=0.6, epsilon=0.1):
     pass
